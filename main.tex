@@ -1,40 +1,96 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 
+
 \title{proyecto}
 \author{Jose Daniel Rivera }
-\date{Marzo 2020}
+\date{Julio 2020}
 \usepackage[spanish]{babel}
 
 \begin{document}
-\title{Proyecto investigacion. \\}
+\title{Proyecto investigacion-hilos. \\}
 
 \maketitle
 
 %\section{}
 \noindent
-Se puede decir que el periodo de permanencia de la humanidad en el mundo es a muy corto plazo, y en dicho tiempo intervalo tan solo se explora una parte diminuta del conjunto del universo. Los humanos somos una especie que está marcada en ser curiosos por naturaleza. Ya que todo el tiempo nos estamos cuestionando y buscando respuestas a lo que sucede en nuestro alrededor. Vivimos en este extenso y amplio mundo, que a veces es amable como otras veces puede ser cruel.\cite{hawking2010} Contemplando la inmensidad del firmamento encima de nosotros, nos hemos hecho siempre una multitud de preguntas, por ejemplo: ¿Cómo podemos comprender el mundo en el que nos hallamos?, ¿Cómo se comporta el universo?, ¿cuál es la naturaleza de la realidad? Y, ¿de dónde viene todo lo que nos rodea? Alguna de estas incógnitas se nos ha pasado en algún momento por la cabeza a todos los seres racionales, pero no es algo de lo cual todos quieran indagar, conocer más y resolver.\\
+\textbf{¿Qué es una interrupción en el contexto de los microprocesadores?.}
+\\
 \noindent
 \\
-Desde los inicios de la humanidad se ha vivido una constante lucha con los elementos, puesto que creíamos que la magia y los dioses eran nuestra única ayuda frente a las fuerzas de la naturaleza, pero poco a poco empezamos a desarrollar nuestro invento más preciado que hoy en día llamamos como: la ciencia.\\
+Una interrupción es un mecanismo que provoca la alteración del orden lógico de ejecución de instrucciones como respuesta a un evento externo generado por el hardware de entrada/salida en forma asincrónica al programa que está siendo ejecutado y fuera de su control.\\
+En forma alternativa se puede decir que una interrupción consiste en un mecanismo que le permite al hardware la invocación de una rutina fuera del control del programa que está siendo ejecutado. \\
 \noindent
 \\
-Las matemáticas eran la base de muchos de los avances científicos que se fueron desarrollando en algunos lugares del mundo como Mesopotamia y Egipto, pasando también por el Imperio Maya, Grecia y Roma, además de la antigua China y la Italia renacentista o los modernos centros de investigación, así nacieron las diferentes disciplinas como la astronomía, geometría, probabilidad, cálculos y la computación.\cite{senovilla2005}\\
+\textbf{}¿\textbf{Se puede hablar de la historia de las interrupciones?}\\
 \noindent
 \\
-En algunos casos aparecieron grandes ideas que rompieron con la visión establecida la cual nos permitieron dar pasos de gigantes, estos momentos fueron llamados como: “la revolución matemática”. Un ejemplo de este era que anteriormente utilizaban palos de madera o varillas de forma horizontal y vertical para darle sumatoria a algún dato que se deseaba generar. Cada lugar de los que fueron mencionados anteriormente contaba con su propio sistema de contabilidad, a lo que luego se formó de manera general un sistema de unidades entre ellos el más conocido fue el artefacto llamado: ábaco, Y que hoy en día seguimos utilizando para enseñarles a realizar operaciones a quienes apenas comienzan con las matemáticas.\\
+La primera técnica que se empleó para esto fue el polling, que consistía en que el propio procesador se encargará de sondear los dispositivos periféricos cada cierto tiempo para averiguar si tenía pendiente alguna comunicación para él. Este método presentaba el inconveniente de ser muy ineficiente, ya que el procesador consumía constantemente tiempo y recursos en realizar estas instrucciones de sondeo.\cite{elizaldeinterrupciones0}\\
+\\
+El mecanismo de interrupciones fue la solución que permitió al procesador desentenderse de esta problemática, y delegar en el dispositivo periférico la responsabilidad de comunicarse con él cuando lo necesitara. El procesador, en este caso, no sondea a ningún dispositivo, sino que queda a la espera de que estos le avisen (le "interrumpan") cuando tengan algo que comunicarle (ya sea un evento, una transferencia de información, una condición de error, etc.).
+. \cite{lopezfundamentos2010}
+
+\noindent\\
+\\
+\textbf{¿Que tipo de interrupciones existen?}\\
+\\
+Las interrupciones se dividen en dos categorías, las de software y las de hardware.
+Por sofwtare se encuentra dos ramas: la del sistema y la del usuario, donde la rama del sistema se desglosa en DOS y el ROM BIOS.
+Mientras que por el lado del harwdare se divide también en dos ramas: una de ellas es interna y la otra externa, la rama externa se desglosa en dos, en enmascarable y en NO enmascarable.
+\\
+\noindent
+\\
+\textbf{¿Cómo se hace la implementación de interrupciones a nivel de hardware?}.\\
 \noindent
 \\ 
-Desde el comienzo de la civilización para el ser humano siempre ha sido importante el poder contar y llevar el control exacto de algo,  por ejemplo el poder contar cuánta comida tenia, hacer intercambios comerciales, controlar el paso del tiempo, esto se fue perfeccionando con el avance del tiempo a lo que hoy en día se conoce como sistemas de numeración.\\
+Las interrupciones de hardware son aquellas interrupciones que se producen como resultado de, por lo general, una operación de E/S. No son producidas por ninguna instrucción de un programa sino por las señales que emiten los dispositivos periféricos para indicarle al procesador que necesitan ser atendidos.
+Cuando el microprocesador accede a un periférico (disco duro, puerto de comunicación..), puede transcurrir algún tiempo antes de que los datos sean obtenidos o transmitidos. La solución más simple es esperar hasta recibir los datos o hasta que se haya efectuado la transmisión (polling), pero esta solución bloquea todos los programas en ejecución, y eso no puede admitirse en un sistema multitarea. Por ello, en los sistemas modernos se prefiere un funcionamiento mediante interrupciones, ya que éstas permiten mejorar la productividad del procesador, de forma que este último puede ordenar una operación de entrada o salida y, en lugar de tener que realizar una espera activa, se puede dedicar a atender a otro proceso o aplicación hasta que el dispositivo esté de nuevo disponible, siendo dicho dispositivo el encargado de notificar al procesador mediante la línea de interrupción que ya está preparado para continuar o terminar la operación de entrada o salida.\\
 \noindent
 \\
-A finales del siglo 19 los matemáticos se convencieron de que “las matemáticas nunca fallan ”, gracias a esto se derivó el nacimiento de la computación, pero, ¿cómo ocurrió esto?, es una de las preguntas que nos hacemos en nuestro diario vivir .\cite{mlodinow2010} Es fácil hacer una analogía con un juego o partida de ajedrez. Pero primero vamos a definir el trabajo matemático como la posibilidad de combinar ideas ya aceptadas para demostrar teoremas nuevos, la idea básica de la que partimos es que se pueden considerar validas los axiomas que vendrían siendo en este caso las fichas de ajedrez que se vendrían combinando como las leyes lógicas de las diferentes posibilidades de mover las fichas, con estos movimientos llegamos a nuevas posiciones tal y como se da en la ciencia que a partir de un movimiento se llega a otro y de un descubrimiento se llega a otro descubrimiento, esto es una similitud en la que se refleja el ajedrez, las ciencia y la vida pero en este caso de analogía a lo que se llega es a un teorema nuevo.\\
+\textbf{¿Cómo se implementan los hilos por software? Debe quedar claro si el lenguaje de programación importa y si el hardware usado afecta}.\\
 \noindent
 \\
-Las leyes de la naturaleza nos dicen cómo se comporta el universo, pero nunca nos dan la respuesta de aquellas incógnitas las cuales ya nos planteamos al inicio de este escrito. Algunos podrían decir que la respuesta a todo esto es que existente un Dios el que quiso crear todo a su imagen y semejanza. Esto es una respuesta la cual es muy razonable y aceptable, pero de esta respuesta también surgen más incógnitas con el simple hecho de: ¿Entonces quién creó a Dios? ¿De dónde surgió este Dios? Todas estos puntos de vista vendrían siendo un tipo de juego en el cual nunca habrá ganadores ni perdedores, de hecho esto no existe, realmente esto se basa en un conjunto de leyes que rigen el universo, así mismo como las leyes que rigen las matemáticas, las leyes que rigen nuestro diario vivir que vendrían convirtiéndose en teoremas.\\
-\noindent
+
+ Cuando es por hardware se puede realizar a nivel de la CPU (si tiene múltiples entradas de interrupción, ya sean directas o codificadas) ó a nivel del controlador de interrupciones. Cuando es por software el mecanismo se implementa como un algoritmo en la rutina de atención a la interrupción. El algoritmo puede
+implementar cualquiera de las estrategias mencionadas, mediante un apropiado recorrido de los controladores de E/S para averiguar cuál fue el que interrumpió, ahora se indicara como puede ser:\\
+- recorido lineal: siempre comenzando por el mismo y con un orden preestablecido (prioridad fija)\\
+- recorrido programable: utilizando una tabla que establece el orden a seguir (prioridad configurable)\\
+- recorrido "round-robin": comenzando cada vez en el siguiente al último
+atendido, en forma circular.\cite{aguilerasistemas2015}\\
 \\
-Gracias a estos teoremas podemos decir que las matemáticas cumplen una serie de propiedades, un ejemplo de este es que con procesos finitos ningún sistema podría ser consistente y completo a lo que esto nos lleva a conocer los procesos matemáticos como propiedades con limites esto derivó el acontecimiento matemático más importante del siglo 20 como es la computación, además fue la plaga de la automatización del pensamiento, de la programación y de los primeros computadores, pero estas ya vendrían siendo otra revolución matemática.
+\textbf{Mostrar un ejemplo de interrupción usando la plataforma Arduino}\\
+\\
+En el siguiente código definimos el pin digital 10 como salida, para emular una onda cuadrada de periodo 300ms (150ms ON y 150ms OFF).
+Para visualizar el funcionamiento de la interrupción,encendemos/apagamos el LED integrado en la placa, por lo que el LED parpadea a intervalos de 600ms (300ms ON y 300ms OFF): No estamos encendiendo el LED con una salida digital, si no que es la interrupción que salta la que enciende y apaga el LED (el pin digital solo emula una señal externa).\\
+const int emuPin = 10;\\
+const int LEDPin = 13;\\
+const int intPin = 2;\\
+volatile int state = LOW;\\
+void setup() {\\
+   pinMode(emuPin, OUTPUT);\\
+   pinMode(LEDPin, OUTPUT);\\
+   pinMode(intPin, INPUT_PULLUP);\\
+   attachInterrupt(digitalPinToInterrupt(intPin), blink, CHANGE);\\
+}
+void loop() {
+   //esta parte es para emular la salida
+   
+   digitalWrite(emuPin, HIGH);\\
+   delay(150);\\
+   digitalWrite(emuPin, LOW);\\
+   delay(150);\\
+}
+void blink() {\\
+   state = !state;\\
+   digitalWrite(LEDPin, state);\\
+}
+\
+\begin{figure}
+    \centering
+    \includegraphics{interrumpcion.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 %\begin{itemize}
     %\item \textbf{}
 \bibliographystyle{apalike}
